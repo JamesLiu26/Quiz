@@ -8,7 +8,14 @@ using System.Web.UI.WebControls;
 namespace Quiz {
     public partial class Quiz20210511 : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
+            Session["ID"] = tb_ID.Text;
+            Session["Name"] = tb_Name.Text;
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Quiz20210511_1.aspx", false);
+            HttpContext.Current.ApplicationInstance.CompleteRequest();
         }
     }
 }
